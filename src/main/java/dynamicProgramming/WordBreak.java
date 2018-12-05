@@ -6,14 +6,17 @@ import java.util.stream.Collectors;
 public class WordBreak {
 
     public static Set<String> dict = new HashSet<>(Arrays.asList(new String[]{"i", "like", "sam", "sung", "samsungs", "mobile", "ice",
-            "cream", "icecream", "man", "go", "mango"}));
+            "cream", "icecream", "man", "go", "mango","a", "b", "c", "bc", "ab"}));
+
+
 
     public static void main(String[] args){
 
         String word = "ilikeSamsungsmangoicecream";
+        String abcdWord = "abcde";
 
      //   wordBreak("ilikeSamsung");
-        System.out.println(wordBreakSpellCorrect(word.toLowerCase().toCharArray(),0,word.length()-1));
+        System.out.println(wordBreakSpellCorrect(abcdWord.toLowerCase().toCharArray(),0,abcdWord.length()-1));
         int[] lookup = new int[word.length() + 1];
         Arrays.fill(lookup, -1);
 
@@ -31,7 +34,7 @@ public class WordBreak {
             stringBuffer.append(spellWord[i]);
             if(dict.contains(stringBuffer.toString()))
             {
-                System.out.println("start "+start +" end" + end);
+                System.out.println("dict word :"+stringBuffer.toString()+" wordbreak "+ new String(spellWord).substring(i+1,end+1));
                boolean otherWordCorrect =  wordBreakSpellCorrect(spellWord,i+1,end);
                if(otherWordCorrect == false)
                    continue;
@@ -68,3 +71,5 @@ public class WordBreak {
 
 
 }
+
+
