@@ -6,7 +6,7 @@ public class InsertionSort {
     public static void main(String[] args){
 
 
-        int[] arr = {3,4,32,1,322,7,91};
+        int[] arr = {300, 4, 32, 1, 322, 7, 91};
 
         insertionSort(arr);
 
@@ -34,3 +34,6 @@ public class InsertionSort {
 
     }
 }
+
+
+//https://en.wikipedia.org/wiki/Insertion_sort#/media/File:Insertion-sort-example-300px.gif
