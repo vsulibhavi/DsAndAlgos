@@ -30,7 +30,7 @@ public class binarySearchinRotatedArray {
             return mid;
         if(arr[mid] < arr[mid -1 ])
             return mid-1;
-        if(arr[mid] < arr[0] )
+        if (arr[mid] < arr[low])
          return    findPivot(arr,low,mid -1);
         else
          return    findPivot(arr,mid +1 ,high);
