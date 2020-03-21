@@ -6,9 +6,9 @@ public class QuickSort {
 
 
 public static void main(String[] args){
-    int[] arr = {3,4,32,1,322,7,91,Integer.MAX_VALUE};
+    int[] arr = {3, 4, 32, 1, 322, 7, 91};
 
-    quickSort(arr,0,arr.length-1 );
+    quickSort(arr, 0, arr.length);
 
     Arrays.stream(arr).forEach(System.out::println);
 }
@@ -30,7 +30,7 @@ public static void main(String[] args){
         do{
 
             low ++;
-        }while (arr[low]<=arr[pivot]);
+        } while (low < arr.length && arr[low] <= arr[pivot]);
 
         do{
 
@@ -51,3 +51,8 @@ public static void main(String[] args){
     return high;
     }
 }
+
+//https://youtu.be/7h1s2SojIRw
+
+// time complexity analysis worst case n^2 , best and average case (nlogn)  , worst case happens when the array is already
+// sorted , suggestion to improve the  , use middle element as pivot , use random element as pivot to avoid worst case

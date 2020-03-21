@@ -1,7 +1,5 @@
 package arrays;
 
-import com.sun.deploy.util.ArrayUtil;
-import com.sun.tools.javac.util.ArrayUtils;
 
 public class MaxSum {
 
