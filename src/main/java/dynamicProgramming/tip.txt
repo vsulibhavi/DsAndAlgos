@@ -1,0 +1,5 @@
+solution for a problem could be found from the solution to the sub problem
+
+ eg = prob(n) = prob(n-1) + prob(n-2)
+
+ draw the recursive tree and if you find the repeating sub problem then it is a problem that could be solved by dp

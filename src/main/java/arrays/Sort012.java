@@ -1,6 +1,5 @@
 package arrays;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Sort012 {
@@ -37,6 +36,7 @@ public static void main(String[] args){
     sort(arr);
     Arrays.stream(arr).forEach(n -> System.out.println(n));
 
+    // another simple approach is to count 0's 1's and 2's and then place it in the array
 }
 
 }
