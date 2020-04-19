@@ -9,14 +9,20 @@ public class FindTripletsWithZeroSum {
     public static void main(String[] args) {
 
 
-        int arr[] = {-2, -1, 2, -3, 1, 0};
-//        int arr[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        //    int arr[] = {-2, -1, 2, -3, 1, 0};
+        int arr[] = new int[100];
+
+        for (int i = 1; i < 100; i++) {
+            arr[i] = i;
+        }
+
+
 
         findTriplets(arr, 0, new int[3], 2);
     }
 
     private static void findTriplets(int[] arr, int start, int[] triplets, int leftSlots) {
-        //  System.out.println(count++);
+        System.out.println(count++);
 
         if (Arrays.stream(triplets).sum() == 0 && leftSlots == -1) {
             Arrays.stream(triplets).forEach(num -> System.out.print(num + " "));
@@ -38,3 +44,5 @@ public class FindTripletsWithZeroSum {
 
     }
 }
+
+//todo sinci both the recursion are different subproblems master theorem cannot be applied , Akra Bazzi  ?
