@@ -68,6 +68,7 @@ public class Trie {
     // Driver
     public static void main(String args[])
     {
+        System.out.println('x' - 'a');
         // Input keys (use only 'a' through 'z' and lower case)
         String keys[] = {"the", "a", "there","their", "answer", "any",
                 "by", "bye", "their"};

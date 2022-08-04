@@ -22,6 +22,19 @@ public class ReadBinaryTreeFromConsole {
         return root;
     }
 
+    public static Node readLevelOrder(int[] levelOrdered,int i,int high){
+
+        if(i>high) return null;
+        Node temp = new Node(levelOrdered[i]);
+
+        temp.left = readLevelOrder(levelOrdered,(2*i) + 1,high );
+        temp.right = readLevelOrder(levelOrdered, (2*i) + 2, high);
+
+        return temp;
+
+
+    }
+
     public static Node insertNode(Node root, int num) {
 
         if(root == null)

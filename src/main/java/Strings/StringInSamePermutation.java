@@ -18,7 +18,7 @@ public class StringInSamePermutation {
     StringBuilder stringBuilder = new StringBuilder(s2);
     for(int i=0;i<s1.length();i++){
 
-      int indexOfChar = stringBuilder.indexOf( ((Character)s1.charAt(i)).toString());
+      int indexOfChar = stringBuilder.indexOf( Character.toString(s1.charAt(i)));
       if(indexOfChar ==-1 || stringBuilder.length()==0)
        return false;
 
