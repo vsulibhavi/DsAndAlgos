@@ -12,50 +12,36 @@ The matching should cover the entire input string (not partial).
 
   public static void main(String[] args) {
 
-    String s = "missssssissippi";
-    String p = "mis*.s*ip*.";
+    String s = "aab";
+    String p = "c*a*b";
 
-   System.out.println( isPatternMatch(s, p));
+
+
+   System.out.println( isPatternMatch(s, p,0,0));
 
 
   }
+// the timecomplexity of recursion is O(2^n) can be further optimized by dp
+  private static boolean isPatternMatch(String s, String p, int i,int j) {
 
-  private static boolean isPatternMatch(String s, String p) {
+    if(i>=s.length() && j>=p.length())
+      return true;
+    if(i>=s.length() || j>=p.length())
+      return false;
 
-    Character prevChar = null;
-    char currentChar;
-    boolean isMatch;
-    int stringIndex = 0;
-    int patternIndex = 0;
-    while (stringIndex < s.length() && patternIndex < p.length()) {
+    boolean match = (s.charAt(i) == p.charAt(j) ) || s.charAt(i) == '.';
 
-      if (s.charAt(stringIndex) == p.charAt(patternIndex)) {
-        prevChar = p.charAt(patternIndex);
-        stringIndex++;
-        patternIndex++;
-      } else if (p.charAt(patternIndex) == '.') {
-        prevChar = '.';
-        stringIndex++;
-        patternIndex++;
-      } else if (p.charAt(patternIndex) == '*' && (prevChar == '.'
-          || s.charAt(stringIndex) == prevChar)) {
-
-        stringIndex++;
-
-      }
-      else if(p.charAt(1+patternIndex) == s.charAt(stringIndex) || p.charAt(1+patternIndex) ==  '.'){
-        prevChar = p.charAt(patternIndex);
-        stringIndex++;
-        patternIndex +=2;
-      }
-      else {
-        return false;
-      }
+    if(j+1 < p.length() && p.charAt(j+1) == '*') {
+     return isPatternMatch(s,p,i,j+2) || (match && isPatternMatch(s,p,i+1,j));
 
     }
-    if(stringIndex== s.length())
-    return true;
-    else
-      return false;
+
+    if(match)
+      return isPatternMatch(s,p,i+1,j+1);
+
+    return false;
+
+
+
   }
 }
